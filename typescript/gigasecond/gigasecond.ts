@@ -1,9 +1,8 @@
 class Gigasecond {
-  gigaDate: Date;
+  private gigaDate: Date;
 
-  constructor(date:Date) {
-    date.setSeconds(date.getSeconds() + 1000000000);
-    this.gigaDate = date;
+  constructor(date: Readonly<Date>) {
+    this.gigaDate = new Date(date.getTime() + 10e11);
   }
 
   date(): Date {
