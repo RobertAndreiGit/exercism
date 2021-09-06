@@ -1,14 +1,10 @@
 export default class Squares{
-    squareOfSum: number;
-    sumOfSquares: number;
-    difference: number;
+    difference: Readonly<number>;
+    squareOfSum: Readonly<number>;
+    sumOfSquares: Readonly<number>;
 
-    constructor(count: number){
-        this.sumOfSquares = 0;
-        for(let i = 1; i <= count; i++){
-            this.sumOfSquares += Math.pow(i, 2);
-        }
-
+    constructor(count: Readonly<number>){
+        this.sumOfSquares = (count *(count+1)*(2*count+1))/6;
         this.squareOfSum = Math.pow((count * (count + 1)) / 2, 2); 
         this.difference = this.squareOfSum - this.sumOfSquares;
     }
